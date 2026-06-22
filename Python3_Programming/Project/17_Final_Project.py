@@ -105,5 +105,5 @@ if __name__ == "__main__":
     print("\n[Calculating Average]")
     demo_manager.calculate_average("Umair")
     
-    if os.path.exists("demo_grades.json"):
-        os.remove("demo_grades.json")
+    # Check your folder! You will see 'demo_grades.json' has been created.
+    # We are leaving it here so you can verify the file handling worked.
