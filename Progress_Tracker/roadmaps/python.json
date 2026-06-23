@@ -1,0 +1,43 @@
+{
+  "id": "python",
+  "title": "Python Mastery",
+  "description": "Complete Python learning roadmap.",
+  "sections": [
+    {
+      "id": "strings",
+      "title": "Strings",
+      "tasks": [
+        {
+          "id": "string_upper",
+          "title": "Use upper()",
+          "difficulty": "Easy",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "string_lower",
+          "title": "Use lower()",
+          "difficulty": "Easy",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "string_split",
+          "title": "Use split()",
+          "difficulty": "Medium",
+          "estimatedMinutes": 20
+        }
+      ]
+    },
+    {
+      "id": "lists",
+      "title": "Lists",
+      "tasks": [
+        {
+          "id": "lists_append",
+          "title": "Use append()",
+          "difficulty": "Easy",
+          "estimatedMinutes": 15
+        }
+      ]
+    }
+  ]
+}
