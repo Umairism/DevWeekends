@@ -44,10 +44,26 @@ export default function CourseView({ roadmap }: CourseViewProps) {
         selectedTask ? "pr-0" : ""
       )}>
         <div className="mb-8">
-          <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-            <Link href="/courses" className="hover:text-indigo-600 transition-colors">Courses</Link>
-            <span>/</span>
-            <span className="text-gray-900 dark:text-gray-200">{roadmap.title}</span>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+              <Link href="/courses" className="hover:text-indigo-600 transition-colors">Courses</Link>
+              <span>/</span>
+              <span className="text-gray-900 dark:text-gray-200">{roadmap.title}</span>
+            </div>
+            
+            {useProgressStore(state => state.customRoadmaps).some(r => r.id === roadmap.id) && (
+              <button
+                onClick={() => {
+                  if (confirm('Are you sure you want to delete this custom course?')) {
+                    useProgressStore.getState().removeCustomRoadmap(roadmap.id);
+                    window.location.href = '/courses'; // Force full refresh to clear state
+                  }
+                }}
+                className="flex items-center gap-2 text-sm text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-md transition-colors dark:bg-red-500/10 dark:text-red-400 dark:hover:bg-red-500/20"
+              >
+                Delete Course
+              </button>
+            )}
           </div>
           
           <div className="flex items-center gap-4 mb-2">
